@@ -56,6 +56,25 @@ Classification models tested:
 
 - Cross-validation
 
+## Dataset
+- **Source:** Heart Failure Clinical Records Dataset (Kaggle)
+- **Records:** 299 patients
+- **Target Variable:** DEATH_EVENT
+
+## Dashboard Features
+- KPI cards showing total patients, deaths, average age
+- Demographic analysis by age, gender, diabetes, smoking
+- Health metrics analysis (ejection fraction, serum creatinine)
+- Interactive slicers for filtering
+
+## Key Insights
+- Patients aged 60+ show higher mortality rates
+- Lower ejection fraction correlates with higher death events
+- Serum creatinine is a strong indicator of risk
+
+## 🖼 Dashboard Preview
+![Overview](screenshots/overview.png)
+
 ## Technologies
 
 - Python 3.x
