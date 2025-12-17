@@ -4,6 +4,9 @@
 
 This project implements a machine learning pipeline to predict the risk of cardiovascular disease (CVD) based on patient data. The model analyzes clinical and demographic features to classify individuals as at-risk or not, helping with early detection and preventive care.
 
+## Dashboard Preview
+![Overview](screenshots/overview.png)
+
 ## Motivation
 
 Cardiovascular diseases are the leading cause of death globally. Early detection is crucial for:
@@ -71,9 +74,6 @@ Classification models tested:
 - Patients aged 60+ show higher mortality rates
 - Lower ejection fraction correlates with higher death events
 - Serum creatinine is a strong indicator of risk
-
-## Dashboard Preview
-![Overview](screenshots/overview.png)
 
 ## Technologies
 
