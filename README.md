@@ -72,7 +72,7 @@ Classification models tested:
 - Lower ejection fraction correlates with higher death events
 - Serum creatinine is a strong indicator of risk
 
-## 🖼 Dashboard Preview
+## Dashboard Preview
 ![Overview](screenshots/overview.png)
 
 ## Technologies
