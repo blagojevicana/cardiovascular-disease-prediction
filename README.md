@@ -21,13 +21,13 @@ Cardiovascular diseases are the leading cause of death globally. Early detection
 
 ## Approach
 
-1. Data Collection
+#### 1. Data Collection
 
 - Public datasets such as the UCI Heart Disease dataset or similar clinical datasets
 
 - Features include: age, gender, blood pressure, cholesterol, smoking status, BMI, and more
 
-2. Data Preprocessing
+#### 2. Data Preprocessing
 
 - Handling missing values
 
@@ -44,7 +44,7 @@ Cardiovascular diseases are the leading cause of death globally. Early detection
 ![Correlation](results/correlation.png)
 
 
-3. Model Training
+#### 3. Model Training
 
 Classification models tested:
 
@@ -57,13 +57,19 @@ Classification models tested:
 ![Models](results/models.png)
 
 
-4. Evaluation
+#### 4. Evaluation
 
 - Metrics: Accuracy, Precision, Recall, F1-score, ROC-AUC
 
 - Confusion matrix analysis
 
 - Cross-validation
+
+| Method | F1-score | Accuracy | TP rate | TN rate |
+|----------|----------|----------|----------|----------|
+| Random Forest  | 0.5267 | 0.7390  | 0.5729  | 0.8127 |
+| Gradient Boost | 0.5403 | 0.7480 | 0.4809 | 0.8730 |
+| Support Vector Machine | 0.5079 | 0.7340 | 0.4463 | 0.8716 |
 
 ## Dataset
 - **Source:** Heart Failure Clinical Records Dataset (Kaggle)
