@@ -25,7 +25,7 @@ Cardiovascular diseases are the leading cause of death globally. Early detection
 
 - Public datasets such as the UCI Heart Disease dataset or similar clinical datasets
 
-- Features include: age, gender, blood pressure, cholesterol, smoking status, BMI, and more
+- Features include: age, sex, smoking, anaemia, creatinine phosphokinase, diabetes, ejection fraction, high blood pressure, platelets, serum creatinine, serum sodium
 
 #### 2. Data Preprocessing
 
@@ -70,6 +70,13 @@ Classification models tested:
 | Random Forest  | 0.5267 | 0.7390  | 0.5729  | 0.8127 |
 | Gradient Boost | 0.5403 | 0.7480 | 0.4809 | 0.8730 |
 | Support Vector Machine | 0.5079 | 0.7340 | 0.4463 | 0.8716 |
+
+After an analysis, it has been concluded that the same results could be achieved with just two features instead of 12. Reducing dimensionality is a big plus when it comes to complex machine learning algorithms.
+
+| Method | F1-score | Accuracy | TP rate | TN rate |
+|----------|----------|----------|----------|----------|
+| Logistic regression (on ejection fraction and serum creatinine)  | 0.5267 | 0.7390  | 0.5729  | 0.8127 |
+| Logistic regression (on all 12 features) | 0.5403 | 0.7480 | 0.4809 | 0.8730 |
 
 ## Dataset
 - **Source:** Heart Failure Clinical Records Dataset (Kaggle)
