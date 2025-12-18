@@ -39,6 +39,11 @@ Cardiovascular diseases are the leading cause of death globally. Early detection
 
 - Identify the most predictive features using statistical analysis or feature importance from tree-based models
 
+![Dataset analysis](figures/dataset_analysis.png)
+![Histograms](figures/histograms.png)
+![Correlation](figures/correlation.png)
+
+
 3. Model Training
 
 Classification models tested:
