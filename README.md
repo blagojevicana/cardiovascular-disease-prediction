@@ -48,13 +48,14 @@ Cardiovascular diseases are the leading cause of death globally. Early detection
 
 Classification models tested:
 
-- Logistic Regression
-
 - Random Forest
 
 - Gradient Boosting 
 
-- Neural Networks 
+- Support Vector Machine
+
+![Models](results/models.png)
+
 
 4. Evaluation
 
