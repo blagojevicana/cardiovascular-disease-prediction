@@ -33,7 +33,7 @@ Cardiovascular diseases are the leading cause of death globally. Early detection
 
 - Normalization / standardization of numeric features
 
-- Encoding categorical variables (e.g., sex, chest pain type)
+- Encoding categorical variables
 
 - Feature Selection
 
@@ -86,18 +86,6 @@ Classification models tested:
 - Patients aged 60+ show higher mortality rates
 - Lower ejection fraction correlates with higher death events
 - Serum creatinine is a strong indicator of risk
-
-## Technologies
-
-- Python 3.x
-
-- NumPy, pandas
-
-- scikit-learn
-
-- XGBoost 
-
-- Matplotlib / Seaborn for visualization
 
 ## Limitations
 
