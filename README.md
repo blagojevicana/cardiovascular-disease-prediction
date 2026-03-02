@@ -186,104 +186,51 @@ Model |F1-score|Accuracy|TP rate | TN rate
 ---|---|---|---|---
 SVM|0.2143|0.6333|0.1765|0.8140|
 
-Next, we will try **Naive Bayes**, which is an algorithm based on Bayes' theorem. . It is "naive" because it assumes all features are independent, meaning each predictor contributes equally and independently to the probability of a class.
+Next, we will try **Naive Bayes**, which is an algorithm based on Bayes' theorem. It is "naive" because it assumes all features are independent, meaning each predictor contributes equally and independently to the probability of a class.
 
 The results after training are:
 
 Model |F1-score|Accuracy|TP rate | TN rate
 ---|---|---|---|---
-Naive Bayes|0.3359|0.7107|0.2443|0.8989
+Naive Bayes|0.3359|0.7107|0.2443|0.9287
 
-..................................................................................................
+Next, we will try **Logistic Regression**. Logistic regression uses the logistic function, or logit function, in mathematics as the equation between x and y. The logit function maps y as a sigmoid function of x.
 
-#### 1. Data Collection
+The results after training are:
 
-- Public datasets such as the UCI Heart Disease dataset or similar clinical datasets
+Model |F1-score|Accuracy|TP rate | TN rate
+---|---|---|---|---
+ Logistic Regression|0.5012|0.7443|0.4194|0.8989
 
-- Features include: age, sex, smoking, anaemia, creatinine phosphokinase, diabetes, ejection fraction, high blood pressure, platelets, serum creatinine, serum sodium
+### 6. Comparing results
 
-#### 2. Data Preprocessing
+Model |F1-score|Accuracy|TP rate | TN rate
+---|---|---|---|---
+Random Forest|0.5304|0.7390|0.4803|0.8631
+Gradient Boosting|0.5315|0.7283|0.4973|0.8383|
+SVM|0.2143|0.6333|0.1765|0.8140|
+Naive Bayes|0.3359|0.7107|0.2443|0.9287
+Logistic Regression|0.5012|0.7443|0.4194|0.8989
 
-- Handling missing values
+Based on EDA we did before, we found that most informative features are serum_creatinine and ejection_fraction, so we will train the models only on those two features.
 
-- Normalization / standardization of numeric features
-
-- Encoding categorical variables
-
-- Feature Selection
-
-- Identify the most predictive features using statistical analysis or feature importance from tree-based models
-
-![Dataset analysis](results/dataset_analysis.png)
-![Histograms](results/histograms.png)
-![Correlation](results/correlation.png)
-
-
-#### 3. Model Training
-
-Classification models tested:
-
-- Random Forest
-
-- Gradient Boosting 
-
-- Support Vector Machine
+Model | F1-score|Accuracy|TP rate|TN rate
+---|----|---|---|---
+Random Forest|0.5726|0.7397|0.5729|0.8172
+Gradient Boosting|0.5403|0.7480|0.4809|0.8730
+SVM|0.5079|0.7340|0.4463|0.8716
 
 ![Models](results/models.png)
 
+If we bring back the *time* feature, and compare using only those two features vs all features, we get:
 
-#### 4. Evaluation
+Model | F1-score|Accuracy|TP rate|TN rate
+---|----|---|---|---
+Logistic Regression (EF, SR & FU) | 0.6993|0.8270|0.6510|0.9083
+Logistic Regression (all features)|0.6987|0.8250|0.6544|0.9045
 
-- Metrics: Accuracy, Precision, Recall, F1-score, ROC-AUC
+### 7. Conclusion
 
-- Confusion matrix analysis
+The achived results show that using only two features (serum_creatinine and ejection_fraction) can give better results than using all features.
 
-- Cross-validation
-
-| Method | F1-score | Accuracy | TP rate | TN rate |
-|----------|----------|----------|----------|----------|
-| Random Forest  | 0.5267 | 0.7390  | 0.5729  | 0.8127 |
-| Gradient Boost | 0.5403 | 0.7480 | 0.4809 | 0.8730 |
-| Support Vector Machine | 0.5079 | 0.7340 | 0.4463 | 0.8716 |
-
-After an analysis, it has been concluded that the same results could be achieved with just two features instead of 12. Reducing dimensionality is a big plus when it comes to complex machine learning algorithms.
-
-| Method | F1-score | Accuracy | TP rate | TN rate |
-|----------|----------|----------|----------|----------|
-| Logistic regression (on ejection fraction and serum creatinine)  | 0.5267 | 0.7390  | 0.5729  | 0.8127 |
-| Logistic regression (on all 12 features) | 0.5403 | 0.7480 | 0.4809 | 0.8730 |
-
-## Dataset
-- **Source:** Heart Failure Clinical Records Dataset (Kaggle)
-- **Records:** 299 patients
-- **Target Variable:** DEATH_EVENT
-
-## Dashboard Features
-- KPI cards showing total patients, deaths, average age
-- Demographic analysis by age, gender, diabetes, smoking
-- Health metrics analysis (ejection fraction, serum creatinine)
-- Interactive slicers for filtering
-
-## Key Insights
-- Patients aged 60+ show higher mortality rates
-- Lower ejection fraction correlates with higher death events
-- Serum creatinine is a strong indicator of risk
-
-## Limitations
-
-- Prediction depends on dataset quality and diversity
-
-- Model may not generalize to populations outside the dataset
-
-- Missing or biased data can affect performance
-
-## Future Work
-
-- Incorporate larger, multi-center datasets for better generalization
-
-- Explore deep learning models for feature extraction from raw clinical data
-
-- Develop a web-based tool for real-time risk prediction
-
-- Compare model performance across different demographic groups
 
