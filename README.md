@@ -44,6 +44,55 @@ Next, we should check if the classes are balanced or not.
 We can see that the classes are not balanced, which happens often in real life datasets, and we should keep this in mind.
 
 We can also take a look at means and standard deviations of distributions of continious features.
+
+![Dataset analysis](results/dataset_analysis.png)
+![Dataset analysis](results/data_analysis2.png)
+![Histograms](results/histograms.png)
+
+It is useful to also look at correlation between features themselves, and also with the outcome.
+
+![Correlation](results/correlation.png)
+
+Based on the correlation heatmap matrix, we can notice which features have the most correlation with the outcome.
+Feature |Correlation with outcome
+|---|---|
+time| -0.54 
+serum_creatinine| 0.37 
+ejection_fraction| -0.29 
+age |0.22 
+serum_sodium| -0.21 
+high_blood_pressure| 0.079 
+anaemia| 0.066 
+platelets |-0.046 
+creatinine_phosphokinase| 0.024 
+smoking |-0.013 
+sex| -0.0043 
+diabetes|-0.0019 
+
+It is interesting to see which features are correlated whith each other.
+
+Features | Correlation
+|---|---|
+sex & smoking |0.45 
+serum_creatinine & serum_sodium|-0.3 
+
+We can also calculate Information Gain (IG) for each feature.
+
+Feature |IG coefficient 
+---|---
+time| 0.235042 
+serum_creatinine |0.097463 
+ejection_fraction| 0.072724 
+serum_sodium| 0.069616 
+age |0.050366 
+creatinine_phosphokinase| 0.041297 
+sex |0.002352 
+anaemia |0.000000 
+diabetes| 0.000000 
+high_blood_pressure| 0.000000 
+platelets| 0.000000 
+smoking| 0.000000 
+
 ..................................................................................................
 
 #### 1. Data Collection
