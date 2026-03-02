@@ -174,10 +174,25 @@ The results after training are:
 
 Model |F1-score|Accuracy|TP rate | TN rate
 ---|---|---|---|---
-Gradient Boosting|0.5315|0.7283|0.8383|
+Gradient Boosting|0.5315|0.7283|0.4973|0.8383|
 
 Next, we will try **SVM (Support Vector Machine)**. SVM tries to find the best boundary known as hyperplane that separates different classes in the data. The main goal of SVM is to maximize the margin between the two classes. The larger the margin the better the model performs on new and unseen data. There is one important parameter we need to find before training the model, and that is C. C is a regularization term balancing margin maximization and misclassification penalties. A higher C value forces stricter penalty for misclassifications. We can find C by looking at hinge loss on validation set.
 
+<img src="results/find_C.png" width="500" alt="find_C.png"/>
+
+The results after training are:
+
+Model |F1-score|Accuracy|TP rate | TN rate
+---|---|---|---|---
+SVM|0.2143|0.6333|0.1765|0.8140|
+
+Next, we will try **Naive Bayes**, which is an algorithm based on Bayes' theorem. . It is "naive" because it assumes all features are independent, meaning each predictor contributes equally and independently to the probability of a class.
+
+The results after training are:
+
+Model |F1-score|Accuracy|TP rate | TN rate
+---|---|---|---|---
+Naive Bayes|0.3359|0.7107|0.2443|0.8989
 
 ..................................................................................................
 
