@@ -124,6 +124,8 @@ When using Random Forrest models, there are a few hyperparameteres to consider:
 2. Tree size - increasing the size of a tree increases complexity of the model, which means the model can solve more complex problems, but if we increase it too much, then the model would overfit.
 3. Number of predictors - increasing the number of predictors increases overall accuracy, but could lead to overfitting.
 
+![random_forest](results/random_forest.png)
+
 A useful information we can get from Random Forests is feature importance. This gives us insight into how many times a predictor has been chosen as a best predictor. Feature importance can be calculated in two ways:
 1. Calculating how much impurity has decreased after choosing this predictor. The more impurity decreases, the more useful the predictor is.
 
@@ -170,13 +172,19 @@ When using Gradient Boosting, there are a few hyperparameters to consider:
 2. Tree size - the bigger the tree, the more complex the model is, but we have to pay attention to overfitting.
 3. Learning rate - increasing learning rate leads to overfitting, but small learning rate slows down the algorithm.
 
+<img src="results/gradient_boosting.png" width="500" alt="gradient_boosting.png"/>
+
 The results after training are:
 
 Model |F1-score|Accuracy|TP rate | TN rate
 ---|---|---|---|---
 Gradient Boosting|0.5315|0.7283|0.4973|0.8383|
 
-Next, we will try **SVM (Support Vector Machine)**. SVM tries to find the best boundary known as hyperplane that separates different classes in the data. The main goal of SVM is to maximize the margin between the two classes. The larger the margin the better the model performs on new and unseen data. There is one important parameter we need to find before training the model, and that is C. C is a regularization term balancing margin maximization and misclassification penalties. A higher C value forces stricter penalty for misclassifications. We can find C by looking at hinge loss on validation set.
+Next, we will try **SVM (Support Vector Machine)**. SVM tries to find the best boundary known as hyperplane that separates different classes in the data. The main goal of SVM is to maximize the margin between the two classes. The larger the margin the better the model performs on new and unseen data. 
+
+<img src="results/svm.png" width="400" alt="svm.png"/>
+
+There is one important parameter we need to find before training the model, and that is C. C is a regularization term balancing margin maximization and misclassification penalties. A higher C value forces stricter penalty for misclassifications. We can find C by looking at hinge loss on validation set.
 
 <img src="results/find_C.png" width="500" alt="find_C.png"/>
 
@@ -187,6 +195,8 @@ Model |F1-score|Accuracy|TP rate | TN rate
 SVM|0.2143|0.6333|0.1765|0.8140|
 
 Next, we will try **Naive Bayes**, which is an algorithm based on Bayes' theorem. It is "naive" because it assumes all features are independent, meaning each predictor contributes equally and independently to the probability of a class.
+
+![naive_bayes](results/naive_bayes.png)
 
 The results after training are:
 
@@ -200,7 +210,7 @@ The results after training are:
 
 Model |F1-score|Accuracy|TP rate | TN rate
 ---|---|---|---|---
- Logistic Regression|0.5012|0.7443|0.4194|0.8989
+Logistic Regression|0.5012|0.7443|0.4194|0.8989
 
 ### 6. Comparing results
 
