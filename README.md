@@ -39,7 +39,11 @@ max	|95.0|	1.0|	7861.0	|1.0|	80.0	|1.0|	850000.0	|9.4|	148.0	|1.0|	1.0|	285.0|	1
 
 Next, we should check if the classes are balanced or not.
 
+<img src="results/class_distribution.png" width="500" alt="class_distribution.png"/>
 
+We can see that the classes are not balanced, which happens often in real life datasets, and we should keep this in mind.
+
+We can also take a look at means and standard deviations of distributions of continious features.
 ..................................................................................................
 
 #### 1. Data Collection
