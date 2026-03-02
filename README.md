@@ -105,6 +105,80 @@ which is a pretty bad result, but it gives as a benchmark for other models.
 
 Next, we can try a simple tree.
 
+<img src="results/tree.png" width="700" alt="tree.png"/>
+
+Metrics of this kind of classifier are:
+
+F1-score | Accuracy | TP rate | TN rate
+---|---|---|---
+0.5238|0.6567|0.4783|0.7038
+
+which are much better than before, but still not good enough. Next, we will try more complicated models and use these ones as a benchmark.
+
+### 5. Other models
+
+First, let us try **Random Forrest**. Random Forrest is an ansamble of tree, and decision is being made as a majority vote. If we want this model to have good generalization, trees should be uncorrelated. We achive this by using bootstrapping. The idea is that every tree chooses its own subset from the original dataset. Every tree will be trained on different set, which means trees will be uncorrelated and won't make the same mistakes.
+
+When using Random Forrest models, there are a few hyperparameteres to consider:
+1. Ansamble size - increasing the number of trees increases the overall accuracy of model, but if we increase it too much, accuracy stays the same, but time to execute program increases.
+2. Tree size - increasing the size of a tree increases complexity of the model, which means the model can solve more complex problems, but if we increase it too much, then the model would overfit.
+3. Number of predictors - increasing the number of predictors increases overall accuracy, but could lead to overfitting.
+
+A useful information we can get from Random Forests is feature importance. This gives us insight into how many times a predictor has been chosen as a best predictor. Feature importance can be calculated in two ways:
+1. Calculating how much impurity has decreased after choosing this predictor. The more impurity decreases, the more useful the predictor is.
+
+Feature | Feature importance 
+---|---
+serum_creatinine |0.1991 
+ejection_fraction| 0.1731 
+age |0.1437 
+platelets |0.1296 
+creatinine_phosphokinase |0.1291 
+serum_sodium |0.1166 
+anaemia |0.0226 
+high_blood_pressure |0.0222 
+diabetes| 0.0220 
+sex |0.0217 
+smoking |0.0203 
+
+2. Calculating accuracy of the model on validation set, then observing if it increases when the predictor is used.
+
+Feature | Feature importance 
+---|---
+serum_creatinine| 0.0479 
+ejection_fraction| 0.0410 
+age |0.0157 
+serum_sodium |0.0088 
+sex |0.0020 
+creatinine_phosphokinase| 0.0010 
+anaemia |-0.0006 
+diabetes |-0.0031 
+smoking |-0.0033 
+high_blood_pressure |-0.0039 
+platelets |-0.0059 
+
+The results after training are:
+
+Model |F1-score|Accuracy|TP rate | TN rate
+---|---|---|---|---
+Random Forest|0.5304|0.7390|0.4803|0.8631
+
+Next, we will try **Gradient Boosting**. Gradient Boosting is an ansamble algorithm that combines weak models into one strong model. This algorithm iteratively adds new trees that fix the mistakes of trees before them.
+
+When using Gradient Boosting, there are a few hyperparameters to consider:
+1. Ansamble size - the bigger the ansamble, the better the accuracy, but we have to pay attention to overfitting.
+2. Tree size - the bigger the tree, the more complex the model is, but we have to pay attention to overfitting.
+3. Learning rate - increasing learning rate leads to overfitting, but small learning rate slows down the algorithm.
+
+The results after training are:
+
+Model |F1-score|Accuracy|TP rate | TN rate
+---|---|---|---|---
+Gradient Boosting|0.5315|0.7283|0.8383|
+
+Next, we will try **SVM (Support Vector Machine)**. SVM tries to find the best boundary known as hyperplane that separates different classes in the data. The main goal of SVM is to maximize the margin between the two classes. The larger the margin the better the model performs on new and unseen data. There is one important parameter we need to find before training the model, and that is C. C is a regularization term balancing margin maximization and misclassification penalties. A higher C value forces stricter penalty for misclassifications. We can find C by looking at hinge loss on validation set.
+
+
 ..................................................................................................
 
 #### 1. Data Collection
