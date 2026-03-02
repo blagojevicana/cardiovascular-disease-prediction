@@ -93,6 +93,18 @@ high_blood_pressure| 0.000000
 platelets| 0.000000 
 smoking| 0.000000 
 
+### 4. Simple models
+
+Let us first start with the most simple models. One of the most simple models is just counting appearances of each class, and using that class as an outcome for every new patient. This would give us:
+
+F1-score | Accuracy | TP rate | TN rate
+---|---|---|---
+0.0000|0.6789|0.0000|1.0000
+
+which is a pretty bad result, but it gives as a benchmark for other models.
+
+Next, we can try a simple tree.
+
 ..................................................................................................
 
 #### 1. Data Collection
